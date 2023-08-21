@@ -5,13 +5,13 @@ A generic [Makefile](https://raw.githubusercontent.com/ninomegadriver/Generic-Ar
   - Edit and configure it according to your build environment.
   
 
-| command | effect |
-|---------|--------|
-| make    | "default", compile and upload the sketch |
+| command      | effect |
+|--------------|--------|
+| make         | "default", compile and upload the sketch |
 | make upload  | same effect as above, compile and upload the sketch |
 | make compile | just compile the sketch without uploading it|
 | make nocache | discard cache, do a clean compile and upload it |
-| make list | list all installed board's FBQN |
+| make list    | list all installed board's FQBN |
 | make upgrade | update and upgrade the cores and libraries |
   
 -------------------

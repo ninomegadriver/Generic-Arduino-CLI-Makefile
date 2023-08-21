@@ -12,13 +12,14 @@ CLI?=/home/nino/bin/arduino-cli
 PORT?=/dev/ttyACM0
 
 # Setup your board FQBN
-# If you don't know what's your FBQN, try "make list" to list all installed boards
+# If you don't know what's your FQBN, try "make list" to list all installed board's FQBN
 BOARD?=esp32:esp32:esp32
 	
-# Setup your sketch name
-# The command bellow will default to the ".ino" file in the same
-# directory of this Makefile
-SKETCH=`find ./ -name "*.ino"`
+# Setup your sketch file name
+# 
+# The exemple bellow will default to the first ".ino" file in the same
+# directory of this Makefile under linux
+SKETCH=`find ./ -name "*.ino" -print -quit`
 
 # Print a screen width wide separator
 hr=bash -c 'COLS=`tput cols`;x=1;dots=""; while [ $$x -le $$COLS ]; do dots="$$dots""-"; x=$$(( $$x + 1 )); done; dots=$${dots:0:$$COLS}; echo $$dots;'
@@ -52,6 +53,6 @@ update:
 
 list:
 	@${hr}
-	@echo Listing all installed board\'s FBQN
+	@echo Listing all installed board\'s FQBN
 	@${hr}
 	@${CLI} board listall
